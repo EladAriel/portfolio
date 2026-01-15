@@ -1,0 +1,47 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    './src/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        ai: {
+          50: '#f0f9ff',
+          100: '#e0f2fe',
+          200: '#bae6fd',
+          300: '#7dd3fc',
+          400: '#38bdf8',
+          500: '#0ea5e9',
+          600: '#0284c7',
+          700: '#0369a1',
+          800: '#075985',
+          900: '#0c3d66',
+        },
+      },
+      backgroundImage: {
+        'gradient-ai': 'linear-gradient(135deg, #0ea5e9 0%, #06b6d4 50%, #10b981 100%)',
+        'gradient-dark-ai': 'linear-gradient(135deg, #0369a1 0%, #0891b2 50%, #059669 100%)',
+      },
+      boxShadow: {
+        'glow': '0 0 20px rgba(14, 165, 233, 0.5)',
+        'glow-dark': '0 0 20px rgba(3, 105, 161, 0.5)',
+      },
+      animation: {
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+      },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        'pulse-glow': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.5)' },
+          '50%': { boxShadow: '0 0 30px rgba(14, 165, 233, 0.8)' },
+        },
+      },
+    },
+  },
+}
