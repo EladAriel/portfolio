@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header';
 import { ContributionCard } from '@/components/ContributionCard';
 import { contributions, categories } from '@/data/contributions';
+import './page.css';
 
 export default function Home() {
   // Group contributions by category
@@ -51,19 +52,19 @@ export default function Home() {
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               <span className="gradient-text">Engineering Portfolio</span>
               <br />
-              <span className="text-gray-600 dark:text-gray-400 text-4xl md:text-5xl">
+              <span className="hero-subtitle text-4xl md:text-5xl">
                 Open Source & Projects
               </span>
             </h1>
 
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
+            <p className="hero-description text-lg md:text-xl mb-8 leading-relaxed">
               Showcasing engineering work across open source contributions, plugins, AI projects, and professional development.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="#contributions"
-                className="px-8 py-3 rounded-lg bg-gradient-ai text-white font-semibold hover:shadow-glow transition-all hover:shadow-lg"
+                className="hero-cta-button"
               >
                 Explore Work →
               </a>
@@ -80,30 +81,30 @@ export default function Home() {
         </section>
 
         {/* Stats Section */}
-        <section className="bg-gradient-to-b from-gray-50 to-white dark:from-gray-800 dark:to-gray-900 py-16">
+        <section className="stats-section">
           <div className="container-custom">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">
+            <div className="stats-container">
+              <div className="stat-item">
+                <div className="stat-number gradient-text">
                   {sortedGrouped['opensource']?.length || 'TBD'}
                 </div>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="stat-label">
                   Open Source
                 </p>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">
+              <div className="stat-item">
+                <div className="stat-number gradient-text">
                   {sortedGrouped['plugins_and_rules']?.length || 'TBD'}
                 </div>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="stat-label">
                   Plugins & Rules
                 </p>
               </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold gradient-text mb-2">
+              <div className="stat-item">
+                <div className="stat-number gradient-text">
                   {sortedGrouped['ai_projects']?.length || 'TBD'}
                 </div>
-                <p className="text-gray-600 dark:text-gray-400">
+                <p className="stat-label">
                   AI Projects
                 </p>
               </div>
@@ -116,19 +117,19 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
             Work & Contributions
           </h2>
-          <p className="text-gray-600 dark:text-gray-400 text-lg mb-16">
+          <p className="hero-description text-lg mb-16">
             Engineering expertise across multiple domains and communities
           </p>
 
           {categoriesDisplay.map((category) => (
             <div key={category.key} className="mb-20">
-              <div className="flex items-center gap-3 mb-8">
-                <div className="w-1 h-8 bg-gradient-ai rounded-full" />
-                <div className="flex-1">
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white">
+              <div className="category-header">
+                <div className="category-accent" />
+                <div className="category-content">
+                  <h3 className="category-title">
                     {category.label}
                   </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                  <p className="section-description">
                     {category.description}
                   </p>
                 </div>
@@ -147,8 +148,8 @@ export default function Home() {
                   ))}
                 </div>
               ) : (
-                <div className="rounded-lg border-2 border-dashed border-gray-300 dark:border-gray-600 p-12 text-center">
-                  <p className="text-gray-600 dark:text-gray-400 text-lg">
+                <div className="empty-state">
+                  <p className="empty-state-text">
                     Coming soon...
                   </p>
                 </div>
@@ -158,20 +159,20 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="bg-gray-900 dark:bg-black text-gray-300 py-8">
+        <footer className="footer">
           <div className="container-custom">
-            <div className="flex flex-col md:flex-row items-center justify-between">
-              <p className="text-sm">
+            <div className="footer-content">
+              <p className="footer-text">
                 © 2026 AI Portfolio. Built with{' '}
-                <span className="text-ai-400">Next.js</span>,{' '}
-                <span className="text-ai-400">React</span>, and{' '}
-                <span className="text-ai-400">Tailwind CSS</span>.
+                <span className="text-ai-600 dark:text-ai-400">Next.js</span>,{' '}
+                <span className="text-ai-600 dark:text-ai-400">React</span>, and{' '}
+                <span className="text-ai-600 dark:text-ai-400">Tailwind CSS</span>.
               </p>
-              <div className="flex gap-4 mt-4 md:mt-0">
-                <a href="https://github.com/eladariel" target="_blank" rel="noopener noreferrer" className="hover:text-ai-400 transition-colors">
+              <div className="footer-links">
+                <a href="https://github.com/eladariel" target="_blank" rel="noopener noreferrer" className="footer-link">
                   GitHub
                 </a>
-                <a href="https://linkedin.com/in/elad-ariel-856abb101" target="_blank" rel="noopener noreferrer" className="hover:text-ai-400 transition-colors">
+                <a href="https://linkedin.com/in/elad-ariel-856abb101" target="_blank" rel="noopener noreferrer" className="footer-link">
                   LinkedIn
                 </a>
               </div>

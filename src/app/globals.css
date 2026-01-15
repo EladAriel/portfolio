@@ -3,10 +3,42 @@
 @layer base {
   :root {
     color-scheme: light;
+
+    /* Theme colors */
+    --background: #ffffff;
+    --foreground: #111827;
+    --background-secondary: #f9fafb;
+
+    /* Header colors */
+    --header-bg: rgba(255, 255, 255, 0.8);
+    --header-border: #e5e7eb;
+    --header-text: #111827;
+
+    /* Button colors */
+    --button-bg: #f3f4f6;
+    --button-bg-hover: #e5e7eb;
+    --button-active-bg: #2563eb;
+    --button-active-text: #ffffff;
   }
 
   html.dark {
     color-scheme: dark;
+
+    /* Theme colors */
+    --background: #111827;
+    --foreground: #f3f4f6;
+    --background-secondary: #1f2937;
+
+    /* Header colors */
+    --header-bg: rgba(17, 24, 39, 0.8);
+    --header-border: #374151;
+    --header-text: #f3f4f6;
+
+    /* Button colors */
+    --button-bg: #374151;
+    --button-bg-hover: #4b5563;
+    --button-active-bg: #2563eb;
+    --button-active-text: #ffffff;
   }
 }
 
@@ -20,10 +52,11 @@
   }
 
   .gradient-text {
-    background-image: linear-gradient(to right, rgb(2, 132, 199), rgb(59, 130, 246));
+    background-image: linear-gradient(to right, rgb(2, 101, 172), rgb(37, 99, 235));
     background-clip: text;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    font-weight: 800;
   }
 
   .dark .gradient-text {
@@ -39,10 +72,13 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--background);
 }
 
 body {
   animation: fadeIn 0.5s ease-in;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 @keyframes fadeIn {

@@ -4,29 +4,40 @@ import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { ReactNode, useEffect } from 'react';
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  // Force dark theme by clearing any existing localStorage preference on mount
+  // Migrate from old forced-dark storage key to new versioned key
   useEffect(() => {
-    const storageKey = 'portfolio-theme';
-    const current = localStorage.getItem(storageKey);
-    // If anything other than 'dark' is stored, override it
-    if (current !== 'dark') {
-      localStorage.setItem(storageKey, 'dark');
-      // Force page refresh to apply theme
-      if (current !== null) {
-        window.location.reload();
+    const oldKey = 'portfolio-theme';
+    const newKey = 'portfolio-theme-v2';
+
+    try {
+      const oldValue = localStorage.getItem(oldKey);
+
+      // If old key exists, migrate it (preserve forced-dark users to light mode)
+      if (oldValue !== null && oldValue === 'dark') {
+        // User was forced to dark mode, preserve their preference
+        localStorage.setItem(newKey, 'dark');
+        localStorage.removeItem(oldKey);
+      } else if (oldValue !== null) {
+        // Any other value, use new system
+        localStorage.setItem(newKey, oldValue);
+        localStorage.removeItem(oldKey);
       }
+    } catch (error) {
+      // localStorage unavailable, silently continue (system preference will be used)
+      console.debug('Theme storage migration skipped:', error instanceof Error ? error.message : 'Unknown error');
     }
   }, []);
 
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="dark"
-      enableSystem={false}
-      storageKey="portfolio-theme"
-      enableColorScheme={false}
+      defaultTheme="system"
+      enableSystem={true}
+      storageKey="portfolio-theme-v2"
+      enableColorScheme={true}
       disableTransitionOnChange={false}
-      forcedTheme="dark"
+      forcedTheme={undefined}
+      themes={['light', 'dark']}
     >
       {children}
     </NextThemesProvider>

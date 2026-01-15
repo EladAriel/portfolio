@@ -31,6 +31,7 @@ export default {
       animation: {
         'float': 'float 6s ease-in-out infinite',
         'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+        'pulse-glow-light': 'pulse-glow-light 2s ease-in-out infinite',
       },
       keyframes: {
         float: {
@@ -38,8 +39,12 @@ export default {
           '50%': { transform: 'translateY(-20px)' },
         },
         'pulse-glow': {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.5)' },
-          '50%': { boxShadow: '0 0 30px rgba(14, 165, 233, 0.8)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(3, 105, 161, 0.5)' },
+          '50%': { boxShadow: '0 0 30px rgba(3, 105, 161, 0.8)' },
+        },
+        'pulse-glow-light': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.4)' },
+          '50%': { boxShadow: '0 0 30px rgba(14, 165, 233, 0.6)' },
         },
       },
     },
