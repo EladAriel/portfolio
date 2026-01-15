@@ -5,20 +5,23 @@ import { useTheme } from 'next-themes';
 import { Briefcase, Moon, Sun } from 'lucide-react';
 
 export function Header() {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
+  // Determine active theme: use explicit theme if set, otherwise use resolvedTheme
+  const activeTheme = theme === 'system' ? resolvedTheme : theme;
+
   return (
-    <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+    <header className="header-container">
       <div className="container-custom py-4 flex items-center justify-between">
         {/* Logo/Title */}
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-gradient-ai rounded-lg flex items-center justify-center text-white font-bold text-lg">
-            <Briefcase size={24} className="text-white" />
+          <div className="logo-container">
+            <Briefcase size={24} />
           </div>
           <h1 className="gradient-text text-2xl font-bold hidden sm:block">
             Elad Ariel Portfolio
@@ -30,14 +33,10 @@ export function Header() {
 
         {/* Theme Toggle - Two Button Style */}
         {mounted && (
-          <div className="flex gap-2 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+          <div className="theme-toggle-container">
             <button
               onClick={() => setTheme('light')}
-              className={`p-2 rounded-md transition-all ${
-                theme === 'light'
-                  ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-              }`}
+              className={`theme-button ${activeTheme === 'light' ? 'theme-button-active' : ''}`}
               title="Light Mode"
               aria-label="Light Mode"
             >
@@ -45,11 +44,7 @@ export function Header() {
             </button>
             <button
               onClick={() => setTheme('dark')}
-              className={`p-2 rounded-md transition-all ${
-                theme === 'dark'
-                  ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
-                  : 'text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-              }`}
+              className={`theme-button ${activeTheme === 'dark' ? 'theme-button-active' : ''}`}
               title="Dark Mode"
               aria-label="Dark Mode"
             >
