@@ -108,4 +108,16 @@ export const contributions: Contribution[] = [
     date: '2026-01-14',
     icon: '🔌',
   },
+  {
+    id: 'llm-eval-plugin',
+    title: 'LLM Evaluation Plugin',
+    description: 'A comprehensive toolkit for evaluating and building LLM applications, combining systematic evaluation methodology with practical RAG implementation.',
+    type: 'plugin',
+    url: 'https://github.com/EladAriel/llm-eval-plugin',
+    repository: 'EladAriel/llm-eval-plugin',
+    category: 'plugins_and_rules',
+    tags: ['Claude', 'Plugin', 'Eval'],
+    date: '2026-02-12',
+    icon: '🔌',
+  },
 ];
