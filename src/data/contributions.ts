@@ -120,4 +120,16 @@ export const contributions: Contribution[] = [
     date: '2026-02-12',
     icon: '🔌',
   },
+  {
+    id: 'mini-agent-platform',
+    title: 'Mini Agent Platform',
+    description: 'A multi-tenant REST API for managing AI agents, registering reusable tools, and executing traceable tasks. Built with FastAPI, MongoDB, and LangGraph with a deterministic mock LLM and prompt injection guardrails.',
+    type: 'repo',
+    url: 'https://github.com/EladAriel/mini-agent-platform',
+    repository: 'EladAriel/mini-agent-platform',
+    category: 'ai_projects',
+    tags: ['FastAPI', 'MongoDB', 'LangGraph', 'Multi-Tenant', 'AI Agents'],
+    date: '2026-03-04',
+    icon: '🤖',
+  },  
 ];
