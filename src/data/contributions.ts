@@ -132,4 +132,16 @@ export const contributions: Contribution[] = [
     date: '2026-03-04',
     icon: '🤖',
   },  
+  {
+    id: 'mini-bug-fixer',
+    title: 'Mini Bug Fixer',
+    description: 'AI agent that diagnoses production bugs by querying live observability data, generating a validated fix, and storing the result as reusable institutional knowledge.',
+    type: 'repo',
+    url: 'https://github.com/EladAriel/mini-agent-platform',
+    repository: 'EladAriel/mini_bug_fixer',
+    category: 'ai_projects',
+    tags: ['Eval', 'MCP', 'RAG', 'AI Agents'],
+    date: '2026-03-30',
+    icon: '🐞',
+  },  
 ];
