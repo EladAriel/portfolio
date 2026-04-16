@@ -143,5 +143,17 @@ export const contributions: Contribution[] = [
     tags: ['Eval', 'MCP', 'RAG', 'AI Agents'],
     date: '2026-03-30',
     icon: '🐞',
+  },
+  {
+    id: 'ai_eval_basics',
+    title: 'AI Eval Basics',
+    description: '10 sessions target the highest-leverage concepts - the ones that actually ship evals in production (20% concepts, 80% production value)',
+    type: 'repo',
+    url: 'https://github.com/EladAriel/ai_eval_basics',
+    repository: 'EladAriel/ai_eval_basics',
+    category: 'ai_projects',
+    tags: ['Eval', 'Learning', 'RAG', 'AI Agents'],
+    date: '2026-04-16',
+    icon: '⚖',
   },  
 ];
