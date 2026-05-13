@@ -156,6 +156,7 @@ export const contributions: Contribution[] = [
     date: '2026-04-16',
     icon: '⚖',
   },
+  {
     id: 'ai-cli-communication-protocol',
     title: 'AI CLI Communication Protocol',
     description: 'A file-based protocol for Gemini CLI to orchestrate multi-agent collaboration (Gemini, Claude, Codex). Uses a markdown state machine to manage planning, implementation, and review cycles on large codebases.',
