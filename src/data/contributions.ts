@@ -168,4 +168,16 @@ export const contributions: Contribution[] = [
     date: '2026-05-13',
     icon: '🔀',
   },   
+  {
+    id: 'fullstack-llm-wiki',
+    title: 'Fullstack LLM Wiki',
+    description: 'A local Markdown documentation wikis for AI coding assistants.',
+    type: 'repo',
+    url: 'https://github.com/EladAriel/fullstack-llm-wiki',
+    repository: 'EladAriel/fullstack-llm-wiki',
+    category: 'ai_projects',
+    tags: ['AI IDE', 'LLM WIKI', 'FULLSTACK'],
+    date: '2026-06-24',
+    icon: '📚',
+  },   
 ];
