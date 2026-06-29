@@ -121,6 +121,18 @@ export const contributions: Contribution[] = [
     icon: '🔌',
   },
   {
+    id: 'mattpocock-skills-cursor',
+    title: 'Matt Pocock Skills (Cursor)',
+    description: 'A Cursor-only fork of https://github.com/mattpocock/skills',
+    type: 'plugin',
+    url: 'https://github.com/EladAriel/mattpocock-skills-cursor',
+    repository: 'EladAriel/mattpocock-skills-cursor',
+    category: 'plugins_and_rules',
+    tags: ['Cursor', 'Skills'],
+    date: '2026-06-29',
+    icon: '⚙️',
+  },  
+  {
     id: 'mini-agent-platform',
     title: 'Mini Agent Platform',
     description: 'A multi-tenant REST API for managing AI agents, registering reusable tools, and executing traceable tasks. Built with FastAPI, MongoDB, and LangGraph with a deterministic mock LLM and prompt injection guardrails.',
